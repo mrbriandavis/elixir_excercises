@@ -4,3 +4,8 @@ elixir:
 otp_release:
   - 18.2.1
 
+install:
+  - mix local.hex --force
+  - mix deps.get
+script:
+  - mix test
