@@ -8,3 +8,4 @@ install:
   - mix local.hex --force
 script:
   - elixir saying_hello.exs
+  - elixir counting_characters.exs
