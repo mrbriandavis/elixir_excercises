@@ -21,9 +21,15 @@ defmodule PrintQuotesTest do
 
   import ExUnit.CaptureIO
 
-  test "requests to import a quote" do
+  test "requests a quote" do
     assert capture_io(fn ->
       PrintQuotes.ask_for_quote
     end) == "What is the quote?\n"
+  end
+
+  test "requests an author" do
+    assert capture_io(fn ->
+      PrintQuotes.ask_for_author
+    end) == "Who is the author?\n"
   end
 end
