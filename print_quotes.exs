@@ -8,8 +8,8 @@ defmodule PrintQuotes do
     IO.puts "Who is the author?"
   end
 
-  def output_quote_and_author do
-
+  def output_quote_and_author(author, verb \\ " says, ", phrase) do
+    Enum.join([author, verb, "\"", phrase, "\""])
   end
 end
 
@@ -31,5 +31,11 @@ defmodule PrintQuotesTest do
     assert capture_io(fn ->
       PrintQuotes.ask_for_author
     end) == "Who is the author?\n"
+  end
+
+  test "builds output correctly" do
+    author = "Obi-Wan"
+    phrase = "These are not the droids you are looking for."
+    assert PrintQuotes.output_quote_and_author(author, phrase) == "Obi-Wan says, \"These are not the droids you are looking for.\""
   end
 end
