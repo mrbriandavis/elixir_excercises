@@ -5,7 +5,7 @@ defmodule PrintQuotes do
   end
 
   def ask_for_author do
-
+    IO.puts "Who is the author?"
   end
 
   def output_quote_and_author do
