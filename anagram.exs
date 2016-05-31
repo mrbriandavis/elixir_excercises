@@ -1,20 +1,20 @@
 defmodule Anagram do
   def signature( word ) do
     word
-    |> codepoints
-    |> sort
-    |> join
+    |> _codepoints
+    |> _sort
+    |> _join
   end
 
-  def codepoints(word) do
+  def _codepoints(word) do
     String.codepoints(word)
   end
 
-  def sort(word) do
+  def _sort(word) do
     Enum.sort(word)
   end
 
-  def join(word) do
+  def _join(word) do
     Enum.join(word)
   end
 end
@@ -26,15 +26,15 @@ defmodule AnagramTest do
   use ExUnit.Case, async: true
 
   test "codepoints a word" do
-    assert Anagram.codepoints("word") == ["w", "o", "r", "d"]
+    assert Anagram._codepoints("word") == ["w", "o", "r", "d"]
   end
 
   test "sorts a list of letters" do
-    assert Anagram.sort(["c", "b", "a"]) == ["a", "b", "c"]
+    assert Anagram._sort(["c", "b", "a"]) == ["a", "b", "c"]
   end
 
   test "joins a list of characters" do
-    assert Anagram.join(["a","c","t"]) == "act"
+    assert Anagram._join(["a","c","t"]) == "act"
   end
 
   test "creates signature of a word" do
