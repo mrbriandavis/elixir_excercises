@@ -10,3 +10,4 @@ script:
   - elixir saying_hello.exs
   - elixir counting_characters.exs
   - elixir print_quotes.exs
+  - elixir anagram.exs
